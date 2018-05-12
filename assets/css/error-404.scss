@@ -1,0 +1,29 @@
+@import "variables/colors";
+
+.error-template{
+  main{
+    margin: 0 auto;
+
+    text-align: center;
+
+    .error-code{
+      font-size: 17rem;
+      margin: 25px auto 0;
+      color: $white-dirty;
+    }
+
+    .error-description{
+      font-size: 1.3em;
+      color: $grey;
+    }
+
+    a{
+
+      color: rgb(38, 168, 237);
+    }
+
+    a:hover{
+      text-decoration: underline;
+    }
+  }
+}

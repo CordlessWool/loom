@@ -1,0 +1,85 @@
+{{!< default}}
+
+{{!-- The tag above means: insert everything in this file
+into the {body} of the default.hbs template --}}
+
+{{!-- Everything inside the #post tags pulls data from the post --}}
+{{#post}}
+
+    <header class="site-header outer {{#if feature_image}}" style="background-image: url({{feature_image}}){{else}}no-cover {{/if}}">
+    <div class="inner">
+        {{> "site-nav"}}
+    </div>
+</header>
+
+
+
+<main id="site-main" class="site-main outer">
+    <div class="inner">
+
+        <article class="post-full {{post_class}} {{#unless feature_image}} no-image {{/unless}}">
+
+            <header class="post-header">
+                <section class="post-meta">
+                    <time class="post-full-meta-date" datetime="{{date format="YYYY-MM-DD"}}">{{date format="D MMMM YYYY"}}</time>
+                    {{#primary_tag}}
+                        <span class="date-divider">/</span> <a href="{{url}}">{{name}}</a>
+                    {{/primary_tag}}
+                </section>
+                <h1 class="post-title">{{title}}</h1>
+            </header>
+
+
+            <section class="post-content">
+                {{content}}
+            </section>
+
+            {{!-- Email subscribe form at the bottom of the page --}}
+            {{#if @labs.subscribers}}
+            <section class="subscribe-form">
+                <h3 class="subscribe-form-title">Subscribe to {{@blog.title}}</h3>
+                <p>Get the latest posts delivered right to your inbox</p>
+                {{subscribe_form placeholder="youremail@example.com"}}
+            </section>
+            {{/if}}
+
+            <footer class="post-meta">
+
+                <ul class="post-tags">
+                    {{#foreach tags}}
+                        <li><a href="{{url}}">{{name}}</a></li>
+                    {{/foreach}}
+                </ul>
+                <ul class="author-list">
+                    {{#foreach authors}}
+                        <li class="author-list-item">
+
+                            <a href="{{url}}" class="author-name-tooltip">
+                                {{name}}
+                            </a>
+
+                        </li>
+                    {{/foreach}}
+                </ul>
+            </footer>
+
+            {{!--
+            <section class="post-full-comments">
+                If you want to embed comments, this is a good place to do it!
+            </section>
+            --}}
+
+        </article>
+
+    </div>
+</main>
+
+
+{{!-- Floating header which appears on-scroll, included from includes/floating-header.hbs --}}
+
+{{/post}}
+
+{{!-- The #contentFor helper here will send everything inside it up to the matching #block helper found in default.hbs --}}
+{{#contentFor "scripts"}}
+
+{{/contentFor}}

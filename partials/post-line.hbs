@@ -1,0 +1,32 @@
+<article class="post-line {{post_class}}{{#unless feature_image}} no-image{{/unless}}">
+    <div class="post-line-content">
+        <a class="post-line-content-link" href="{{url}}">
+            <header class="post-header">
+
+                <h2 class="post-title">{{title}}</h2>
+            </header>
+            <section class="post-excerpt">
+                <p>{{content}}</p>
+            </section>
+        </a>
+        <footer class="post-meta">
+
+            <ul class="post-tags">
+                {{#foreach tags}}
+                    <li><a href="{{url}}">{{name}}</a></li>
+                {{/foreach}}
+            </ul>
+            <ul class="author-list">
+                {{#foreach authors}}
+                    <li class="author-list-item">
+
+                        <a href="{{url}}" class="author-name-tooltip">
+                            {{name}}
+                        </a>
+
+                    </li>
+                {{/foreach}}
+            </ul>
+        </footer>
+    </div>
+</article>

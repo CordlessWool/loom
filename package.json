@@ -1,0 +1,58 @@
+{
+    "name": "loom",
+    "description": "A simple blog, developed for storyloom.de",
+    "demo": "https://storyloom.de",
+    "version": "1.0.8",
+    "engines": {
+        "ghost": ">=1.2.0"
+    },
+    "license": "MIT",
+    "screenshots": {
+        "desktop": "",
+        "mobile": ""
+    },
+    "scripts": {
+      "dev": "gulp",
+      "zip": "gulp zip"
+    },
+    "author": {
+        "name": "Wolfgang Rathgeb",
+        "email": "w.rathgeb@dropanote.de",
+        "url": "https://dropanote.de"
+    },
+    "gpm": {
+        "type": "theme",
+        "categories": [
+            "Minimal",
+            "Blog"
+        ]
+    },
+    "keywords": [
+        "ghost",
+        "theme",
+        "loom"
+    ],
+    "repository": {
+        "type": "git",
+        "url": "https://github.com/CordlessWool/Loom"
+    },
+    "bugs": "https://github.com/CordlessWool/Loom/issues",
+    "contributors": "https://github.com/CordlessWool/Loom",
+    "devDependencies": {
+        "autoprefixer": "6.3.6",
+        "cssnano": "3.7.1",
+        "gulp": "3.9.1",
+        "gulp-livereload": "3.8.1",
+        "gulp-postcss": "6.1.1",
+        "gulp-sourcemaps": "1.6.0",
+        "gulp-util": "3.0.7",
+        "gulp-watch": "4.3.8",
+        "gulp-zip": "4.0.0",
+        "postcss-color-function": "2.0.1",
+        "postcss-custom-properties": "5.0.1",
+        "postcss-easy-import": "1.0.1"
+    },
+    "config": {
+        "posts_per_page": 7
+    }
+}

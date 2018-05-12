@@ -1,0 +1,341 @@
+html {
+  font-size: 62.5%;
+}
+
+body {
+  margin: 0;
+  font-family: "Noto Serif", serif;
+  font-size: 2rem;
+  line-height: 1.6em;
+  color: #303538;
+}
+
+a {
+  text-decoration: none;
+  color: #485F67;
+}
+
+a:hover {
+  color: #303538;
+}
+
+h1 {
+  line-height: 1.4em;
+  font-size: 5rem;
+}
+
+h2 {
+  font-size: 4rem;
+  line-height: 1.4em;
+}
+
+header.site-header {
+  position: relative;
+  background: #303538 no-repeat center center fixed;
+  background-size: cover;
+  color: white;
+  box-shadow: inset 0 0 200vw rgba(48, 53, 56, 0.95);
+  font-family: "Open Sans", sans-serif;
+}
+header.site-header h1.site-title {
+  font-size: 5rem;
+  margin: 10px 0;
+}
+header.site-header h2.site-description {
+  font-size: 1.6rem;
+  margin: 0;
+}
+header.site-header h2.author-bio {
+  font-size: 1em;
+  font-weight: 300;
+}
+header.site-header .author-profile-image {
+  max-width: 310px;
+  width: 85%;
+  border-radius: 200px;
+}
+header.site-header .author-meta {
+  font-size: 0.9em;
+  z-index: 10;
+  flex-shrink: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin: 0 0 10px 0;
+  font-family: Georgia, serif;
+  font-style: italic;
+}
+header.site-header .inner {
+  margin: 0 auto;
+  max-width: 1040px;
+  width: 95%;
+  text-align: center;
+}
+header.site-header:not(.no-cover) .inner {
+  min-height: 45vh;
+}
+header.site-header .site-header-content {
+  padding: 9rem 0 5rem;
+}
+header.site-header:after {
+  content: "";
+  position: absolute;
+  margin: 0;
+  padding: 0;
+  border: 0;
+  bottom: 0;
+  width: 100%;
+  background: linear-gradient(rgba(255, 255, 255, 0) 60%, rgba(255, 255, 255, 0.85));
+  height: 15px;
+  z-index: 100;
+}
+
+body.home-template header.site-header .inner {
+  min-height: 72.5vh;
+}
+body.home-template .site-header-content {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  padding: 0;
+  transform: translate(-50%, -15%);
+}
+
+nav.site-nav {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  z-index: 1000;
+}
+nav.site-nav > div {
+  flex-direction: row;
+  flex-basis: auto;
+}
+nav.site-nav a {
+  color: #CFCFCF;
+}
+nav.site-nav a:hover {
+  color: #F2F1F9;
+}
+nav.site-nav .site-nav-logo {
+  font-size: 1.4em;
+  color: #CFCFCF;
+}
+nav.site-nav ul.nav {
+  display: flex;
+  line-height: normal;
+}
+nav.site-nav ul.nav li {
+  list-style: none;
+}
+
+article {
+  margin: 7rem auto;
+  width: 90%;
+  max-width: 710px;
+}
+article a.post-line-content-link {
+  color: #111;
+}
+article video, article img {
+  display: block;
+  margin: 0 50%;
+  max-width: 1040px;
+  transform: translate(-50%, 0);
+  text-align: center;
+}
+@media (max-width: 1040px) {
+  article video, article img {
+    width: 100vw;
+  }
+}
+article iframe {
+  margin: 0 auto;
+}
+article blockquote {
+  border-left: #CFCFCF 3px solid;
+  margin: 35px 10px 35px 0;
+  padding: 7px 15px;
+}
+article blockquote p {
+  margin: 0;
+}
+article pre {
+  padding: 13px 11px;
+  background: #F2F1F9;
+  border-radius: 3px;
+}
+article header .post-meta {
+  font-size: 0.825em;
+}
+article header h1 {
+  margin-top: 2px;
+  font-size: 5rem;
+}
+article footer.post-meta {
+  display: flex;
+  justify-content: space-between;
+  flex-direction: row;
+  font-size: 0.825em;
+}
+article footer.post-meta ul {
+  display: flex;
+  flex-direction: row;
+  margin: 0;
+  padding: 0;
+}
+article footer.post-meta ul.post-tags {
+  margin-right: 7px;
+}
+article footer.post-meta ul.author-list {
+  margin-left: 7px;
+}
+article footer.post-meta ul li {
+  list-style: none;
+}
+article footer.post-meta ul li:before {
+  content: "|";
+  padding: 0 5px;
+  color: #485F67;
+}
+article footer.post-meta ul li:nth-of-type(1):before {
+  content: none;
+}
+
+.social-links {
+  flex-shrink: 0;
+  display: flex;
+  align-items: center;
+}
+
+.social-links a:last-of-type {
+  padding-right: 20px;
+}
+
+.social-link {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin: 0;
+  padding: 10px;
+  color: #fff;
+  opacity: 0.8;
+}
+
+.social-link svg {
+  height: 1.8rem;
+  fill: #fff;
+}
+
+.social-link-fb svg {
+  height: 1.5rem;
+}
+
+.social-link-wb svg {
+  height: 1.6rem;
+}
+
+.social-link-wb svg path {
+  stroke: #fff;
+}
+
+.social-link-rss svg {
+  height: 1.5em;
+}
+
+footer.site-footer div.site-footer-content {
+  max-width: 1040px;
+  margin: 0 auto;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+}
+footer.site-footer div.site-footer-content .copyright {
+  margin-right: 7px;
+}
+footer.site-footer div.site-footer-content > * {
+  font-size: 1.5rem;
+}
+footer.site-footer div.site-footer-content nav a {
+  padding: 5px;
+}
+
+.floating-header-share {
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+  padding-left: 2%;
+  font-size: 1.3rem;
+  line-height: 1;
+}
+
+.floating-header-share a {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.floating-header-share svg {
+  width: auto;
+  height: 16px;
+  fill: #fff;
+}
+
+.floating-header-share-label {
+  flex-shrink: 0;
+  display: flex;
+  align-items: center;
+  margin-right: 10px;
+  color: rgba(0, 0, 0, 0.7);
+  font-weight: 500;
+}
+
+.floating-header-share-label svg {
+  margin: 0 5px 0 10px;
+  width: 18px;
+  height: 18px;
+  stroke: rgba(0, 0, 0, 0.7);
+  transform: rotate(90deg);
+}
+
+.floating-header-share-tw,
+.floating-header-share-fb {
+  display: block;
+  align-items: center;
+  width: 60px;
+  height: 60px;
+  color: #fff;
+  line-height: 48px;
+  text-align: center;
+  transition: all 500ms cubic-bezier(0.19, 1, 0.22, 1);
+}
+
+.floating-header-share-tw {
+  background: #33b1ff;
+}
+
+.floating-header-share-fb {
+  background: #005e99;
+}
+
+.error-template main {
+  margin: 0 auto;
+  text-align: center;
+}
+.error-template main .error-code {
+  font-size: 17rem;
+  margin: 25px auto 0;
+  color: #CFCFCF;
+}
+.error-template main .error-description {
+  font-size: 1.3em;
+  color: #303538;
+}
+.error-template main a {
+  color: #26a8ed;
+}
+.error-template main a:hover {
+  text-decoration: underline;
+}
+
+/*# sourceMappingURL=screen.css.map */
