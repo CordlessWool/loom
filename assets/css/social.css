@@ -1,0 +1,100 @@
+.social-links {
+  flex-shrink: 0;
+  display: flex;
+  align-items: center;
+}
+
+.social-links a:last-of-type {
+  padding-right: 20px;
+}
+
+.social-link {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin: 0;
+  padding: 10px;
+  color: #fff;
+  opacity: 0.8;
+}
+
+.social-link svg {
+  height: 1.8rem;
+  fill: #fff;
+}
+
+.social-link-fb svg {
+  height: 1.5rem;
+}
+
+.social-link-wb svg {
+  height: 1.6rem;
+}
+
+.social-link-wb svg path {
+  stroke: #fff;
+}
+
+.social-link-rss svg {
+  height: 1.5em;
+}
+
+.floating-header-share {
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+  padding-left: 2%;
+  font-size: 1.3rem;
+  line-height: 1;
+}
+
+.floating-header-share a {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.floating-header-share svg {
+  width: auto;
+  height: 16px;
+  fill: #fff;
+}
+
+.floating-header-share-label {
+  flex-shrink: 0;
+  display: flex;
+  align-items: center;
+  margin-right: 10px;
+  color: rgba(0, 0, 0, 0.7);
+  font-weight: 500;
+}
+
+.floating-header-share-label svg {
+  margin: 0 5px 0 10px;
+  width: 18px;
+  height: 18px;
+  stroke: rgba(0, 0, 0, 0.7);
+  transform: rotate(90deg);
+}
+
+.floating-header-share-tw,
+.floating-header-share-fb {
+  display: block;
+  align-items: center;
+  width: 60px;
+  height: 60px;
+  color: #fff;
+  line-height: 48px;
+  text-align: center;
+  transition: all 500ms cubic-bezier(0.19, 1, 0.22, 1);
+}
+
+.floating-header-share-tw {
+  background: #33b1ff;
+}
+
+.floating-header-share-fb {
+  background: #005e99;
+}
+
+/*# sourceMappingURL=social.css.map */
