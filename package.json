@@ -2,7 +2,7 @@
     "name": "loom",
     "description": "A simple blog, developed for storyloom.de",
     "demo": "https://storyloom.de",
-    "version": "1.1.1",
+    "version": "1.1.2",
     "engines": {
         "ghost": ">=1.23.0"
     },
