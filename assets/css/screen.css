@@ -309,6 +309,7 @@ nav.site-nav > div {
   flex-basis: auto;
 }
 nav.site-nav .site-nav-logo {
+  position: absolute;
   display: block;
   z-index: 1010;
   font-size: 1.4em;
@@ -340,6 +341,7 @@ nav.site-nav .menu .menu-button {
   left: 0;
   z-index: 1010;
   margin: 5px;
+  cursor: pointer;
 }
 nav.site-nav .menu .menu-button svg {
   fill: #343f44;
@@ -429,14 +431,24 @@ header.no-cover nav.site-nav .site-nav-logo img.svg path {
 /* 6. Article
 /* ---------------------------------------------------------- */
 article {
-  margin: 7rem auto;
+  margin: 7rem auto 13rem;
   width: 90%;
   max-width: 710px;
 }
-article a.post-line-content-link {
-  color: #111;
+article.featured header.post-header {
+  border-left: 9px dotted #485F67;
+  padding-left: 11px;
 }
-article video, article img {
+article a.post-line-content-link {
+  color: #343f44;
+}
+article .fluid-width-video-container {
+  width: 1040px;
+}
+article .fluid-width-video-container iframe {
+  margin: 0 auto;
+}
+article video, article img, article .fluid-width-video-container {
   display: block;
   margin: 0 50%;
   max-width: 1040px;
@@ -444,12 +456,9 @@ article video, article img {
   text-align: center;
 }
 @media (max-width: 1040px) {
-  article video, article img {
+  article video, article img, article .fluid-width-video-container {
     width: 100vw;
   }
-}
-article iframe {
-  margin: 0 auto;
 }
 article blockquote {
   border-left: #CFCFCF 3px solid;

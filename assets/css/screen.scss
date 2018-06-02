@@ -270,6 +270,8 @@ nav.site-nav {
 
   .site-nav-logo {
 
+    position: absolute;
+
     display: block;
     z-index: 1010;
 
@@ -310,6 +312,8 @@ nav.site-nav {
       z-index: 1010;
 
       margin: 5px;
+
+      cursor: pointer;
 
       svg {
         fill: $grey;
@@ -441,23 +445,41 @@ header.no-cover nav.site-nav{
 /* 6. Article
 /* ---------------------------------------------------------- */
 article {
-  margin: 7rem auto;
+  margin: 7rem auto 13rem;
   width: 90%;
-  max-width: 710px;
+  max-width: $max-width-article;
 
   //font-size: 1.6rem;
 
+  &.featured{
+    header.post-header{
+      border-left: 9px dotted $grey-blue;
+      padding-left: 11px;
+
+    }
+  }
+
   a.post-line-content-link {
-    color: $dark;
+    color: $grey;
   }
 
 
-  video, img {
+  .fluid-width-video-container{
+
+    width: $max-width;
+
+    iframe {
+      margin: 0 auto;
+    }
+  }
+
+
+  video, img, .fluid-width-video-container{
     display: block;
     margin: 0 50%;
 
     //width: 100%;
-    max-width: 1040px;
+    max-width: $max-width;
     transform: translate(-50%, 0);
 
     text-align: center;
@@ -469,9 +491,6 @@ article {
   }
 
 
-  iframe {
-    margin: 0 auto;
-  }
 
   blockquote{
     border-left: $white-dirty 3px solid;

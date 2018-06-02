@@ -7,7 +7,7 @@
 
 (function($){
 	
-	const regex = /toggle-([\w-_]*)/g;
+	const regex = /toggle-([\w-_]*)/;
 	
 	const buttons = $('[id^="toggle-"]');
 	for(var button of buttons){
