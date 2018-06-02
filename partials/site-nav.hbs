@@ -9,8 +9,14 @@
         {{/is}}
     </div>
     <div class="site-nav-right">
-        {{#if @blog.navigation}}
-            {{navigation}}
-        {{/if}}
+            <div class="menu">
+                <div id="toggle-site-nav-dropdown" class="menu-button">
+                    <svg height="50" width="50">
+                        <circle cx="25" cy="13" r="4" stroke="white" stroke-width="1"></circle>
+                        <circle cx="25" cy="25" r="4" stroke="white" stroke-width="1"></circle>
+                        <circle cx="25" cy="37" r="4" stroke="white" stroke-width="1"></circle>
+                    </svg>
+                </div>
+            </div>
     </div>
 </nav>

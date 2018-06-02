@@ -1,4 +1,29 @@
+/* Table of Contents
+/* ------------------------------------------------------------
+
+This is a development CSS file which is built to a minified
+production stylesheet in assets/built/screen.css
+
+1.  Global Styles
+2.  Form and Input
+3.  Special Templates
+4.  Site Header
+5.  Site Navigation
+6.  Post Feed
+7.  Single Post
+8.  Author Template
+9.  Error Template
+10. Subscribe Overlay
+11. Site Footer
+
+*/
+
+
+/* 1. Global - Set up the things
+/* ---------------------------------------------------------- */
 @import "variables/colors";
+@import "variables/sizing";
+@import "social";
 
 
 html {
@@ -6,11 +31,16 @@ html {
 }
 
 body {
+
+  position: relative;
+
   margin: 0;
   font-family: 'Noto Serif',serif;
   font-size: 2rem;
   line-height: 1.6em;
   color: $grey;
+
+
 }
 
 a {
@@ -33,15 +63,74 @@ h2 {
   line-height: 1.4em;
 }
 
+
+/* 2. Form and Input
+/* ---------------------------------------------------------- */
+
+button, .button, input, .input, textarea, .textarea,
+label, .label{
+  box-sizing: border-box;
+  padding: 13px 23px;
+  font-size: 2rem;
+
+  border: none;
+
+}
+
+button, .button{
+  background: $grey-blue;
+  border-radius: 0;
+
+  color: white;
+
+  cursor: pointer;
+
+
+}
+
+button:hover, .button:hover{
+  background: $grey;
+}
+
+input, .input{
+
+
+}
+
+/* 2. Spezial
+/* ---------------------------------------------------------- */
+
+.subscribe{
+
+  min-width: 395px;
+
+  form {
+
+    display: flex;
+    flex-direction: row;
+
+    .form-group{
+      flex: auto;
+      input{
+        width: 100%;
+      }
+    }
+  }
+}
+
+
+
+/* 4. Header
+/* ---------------------------------------------------------- */
 header.site-header{
 
   position: relative;
 
-  background: $grey no-repeat center center fixed;
+  background: no-repeat center center fixed;
   background-size: cover;
 
   color: white;
-  box-shadow: inset 0 0 200vw rgba($grey, 0.95);
+  //box-shadow: inset 0 0 200vw rgba(255,255,255, 0.95);
 
   font-family: "Open Sans", sans-serif;
 
@@ -76,6 +165,21 @@ header.site-header{
     margin: 0 0 10px 0;
     font-family: Georgia, serif;
     font-style: italic;
+
+
+    &>*:before {
+      //content: '\2022';
+      content: '';
+      padding: 0 13px;
+
+
+    }
+
+    &>*:first-child:before{
+      content: '';
+    }
+
+
   }
 
   .inner {
@@ -97,6 +201,7 @@ header.site-header{
     padding: 9rem 0 5rem;
   }
 
+
   &:after{
     content: '';
     position: absolute;
@@ -105,11 +210,15 @@ header.site-header{
     border: 0;
     bottom: 0;
     width: 100%;
-    background: linear-gradient( rgba(#fff, 0) 60%, rgba(white, 0.85));
+    background: linear-gradient(rgba(white, 0.7), rgba(white, 0.8), rgba(white, 0.95));
     height: 15px;
     z-index: 100;
   }
 
+}
+
+header.no-cover{
+  color: black;
 }
 
 body.home-template{
@@ -128,17 +237,10 @@ body.home-template{
   }
 }
 
-nav.site-nav {
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
 
-  z-index: 1000;
-
-  &>div{
-    flex-direction: row;
-    flex-basis: auto;
-  }
+/* 5. Site navigation
+/* ---------------------------------------------------------- */
+nav.site-nav, .site-nav-dropdown{
 
   a {
     color: $white-dirty;
@@ -148,9 +250,40 @@ nav.site-nav {
     color: $white-soft-darken;
   }
 
+}
+
+nav.site-nav {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+
+  z-index: 1000;
+
+
+  &>div{
+    flex-direction: row;
+    flex-basis: auto;
+  }
+
+
+
+
   .site-nav-logo {
+
+    position: absolute;
+
+    display: block;
+    z-index: 1010;
+
     font-size: 1.4em;
     color: $white-dirty;
+
+    margin: 11px 0;
+
+    img{
+      height: 37px;
+      fill: #fff;
+    }
   }
 
   ul.nav {
@@ -158,28 +291,195 @@ nav.site-nav {
     line-height: normal;
     li {
       list-style: none;
+      padding: 0 13px;
+    }
+  }
+
+  .menu{
+    display: flex;
+    content: '';
+    position: relative;
+    width: 42px;
+
+    text-align: center;
+
+
+
+    .menu-button{
+      position: absolute;
+      top: 0;
+      left: 0;
+      z-index: 1010;
+
+      margin: 5px;
+
+      cursor: pointer;
+
+      svg {
+        fill: $grey;
+      }
+    }
+  }
+
+
+}
+
+.site-nav-dropdown{
+  position: absolute;
+
+  z-index: 1000;
+  top: 0px;
+  width: 100%;
+
+  box-sizing: padding-box;
+  padding: 57px 0 13px;
+
+  background: $grey;
+
+  transition: top .7s;
+
+  &.hide{
+    top: -450px;
+  }
+
+  .inner {
+
+    display: flex;
+    flex-direction: row;
+
+    @media (max-width: $small) {
+      flex-wrap: wrap-reverse;
+    }
+
+    margin: 0 auto;
+    //padding: 7rem 0;
+    max-width: 1040px;
+    width: 95%;
+
+    & > * {
+
+    }
+
+    p, h1, h2, h3, h4, h5 {
+      color: white;
+    }
+
+    nav {
+      flex: auto;
+
+      display: flex;
+      flex-direction: row;
+      justify-content: flex-end;
+      align-content: center;
+
+      ul.nav {
+
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: flex-end;
+        align-content: center;
+
+        margin: 0;
+
+
+        line-height: normal;
+        li {
+          list-style: none;
+          padding: 7px 13px;
+        }
+      }
+
+      .social-links{
+        display: flex;
+        flex-wrap: wrap;
+        flex-direction: column;
+        justify-content: center;
+
+        margin: 10px;
+        &>*{
+          //flex:auto;
+          align-self: center;
+        }
+      }
+
+
+    }
+
+    .subscribe{
+      max-width: 532px;
+    }
+  }
+
+}
+
+
+/* 5.1. Header with no background image
+/* ---------------------------------------------------------- */
+header.no-cover nav.site-nav{
+  a:hover{
+    color: $grey-blue;
+  }
+
+  .site-nav-logo {
+
+    position: absolute;
+    display: block;
+
+    top: 0;
+
+    font-size: 1.4em;
+    color: $grey;
+
+    margin: 11px 0;
+
+    img{
+      height: 37px;
+      &.svg path {
+        fill: $grey;
+      }
     }
   }
 }
 
+
+/* 6. Article
+/* ---------------------------------------------------------- */
 article {
-  margin: 7rem auto;
+  margin: 7rem auto 13rem;
   width: 90%;
-  max-width: 710px;
+  max-width: $max-width-article;
 
   //font-size: 1.6rem;
 
+  &.featured{
+    header.post-header{
+      border-left: 9px dotted $grey-blue;
+      padding-left: 11px;
+
+    }
+  }
+
   a.post-line-content-link {
-    color: $dark;
+    color: $grey;
   }
 
 
-  video, img {
+  .fluid-width-video-container{
+
+    width: $max-width;
+
+    iframe {
+      margin: 0 auto;
+    }
+  }
+
+
+  video, img, .fluid-width-video-container{
     display: block;
     margin: 0 50%;
 
     //width: 100%;
-    max-width: 1040px;
+    max-width: $max-width;
     transform: translate(-50%, 0);
 
     text-align: center;
@@ -191,9 +491,6 @@ article {
   }
 
 
-  iframe {
-    margin: 0 auto;
-  }
 
   blockquote{
     border-left: $white-dirty 3px solid;
@@ -208,6 +505,20 @@ article {
     padding: 13px 11px;
     background: $white-soft-darken;
     border-radius: 3px;
+    white-space: pre-wrap;
+  }
+
+  .footnotes{
+    font-size: 1.3rem;
+
+    li{
+      margin: 0;
+    }
+
+    p{
+      margin: 0;
+      line-height: 1.1;
+    }
   }
 
   header {
@@ -266,53 +577,6 @@ article {
 
 }
 
-.post-line{
-  
-}
-
-
-
-.social-links {
-  flex-shrink: 0;
-  display: flex;
-  align-items: center;
-}
-
-.social-links a:last-of-type {
-  padding-right: 20px;
-}
-
-.social-link {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  margin: 0;
-  padding: 10px;
-  color: #fff;
-  opacity: 0.8;
-}
-
-.social-link svg {
-  height: 1.8rem;
-  fill: #fff;
-}
-
-.social-link-fb svg {
-  height: 1.5rem;
-}
-
-.social-link-wb svg {
-  height: 1.6rem;
-}
-
-.social-link-wb svg path {
-  stroke: #fff;
-}
-
-.social-link-rss svg {
-  height: 1.5em;
-}
-
 footer.site-footer {
   div.site-footer-content {
 
@@ -342,62 +606,8 @@ footer.site-footer {
 }
 
 
-.floating-header-share {
-  display: flex;
-  justify-content: flex-end;
-  align-items: center;
-  padding-left: 2%;
-  font-size: 1.3rem;
-  line-height: 1;
-}
+.overlay{
 
-.floating-header-share a {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-}
-
-.floating-header-share svg {
-  width: auto;
-  height: 16px;
-  fill: #fff;
-}
-
-.floating-header-share-label {
-  flex-shrink: 0;
-  display: flex;
-  align-items: center;
-  margin-right: 10px;
-  color: rgba(0,0,0,0.7);
-  font-weight: 500;
-}
-
-.floating-header-share-label svg {
-  margin: 0 5px 0 10px;
-  width: 18px;
-  height: 18px;
-  stroke: rgba(0,0,0,0.7);
-  transform: rotate(90deg);
-}
-
-.floating-header-share-tw,
-.floating-header-share-fb {
-  display: block;
-  align-items: center;
-  width: 60px;
-  height: 60px;
-  color: #fff;
-  line-height: 48px;
-  text-align: center;
-  transition: all 500ms cubic-bezier(0.19, 1, 0.22, 1);
-}
-
-.floating-header-share-tw {
-  background: #33b1ff;
-}
-
-.floating-header-share-fb {
-  background: #005e99;
 }
 
 

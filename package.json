@@ -2,18 +2,18 @@
     "name": "loom",
     "description": "A simple blog, developed for storyloom.de",
     "demo": "https://storyloom.de",
-    "version": "1.0.8",
+    "version": "1.1.2",
     "engines": {
-        "ghost": ">=1.2.0"
+        "ghost": ">=1.23.0"
     },
     "license": "MIT",
     "screenshots": {
-        "desktop": "",
+        "desktop": "screenshots/Screenshot-2018-6-2 Loom_big.jpg",
         "mobile": ""
     },
     "scripts": {
-      "dev": "gulp",
-      "zip": "gulp zip"
+        "dev": "gulp",
+        "zip": "gulp zip"
     },
     "author": {
         "name": "Wolfgang Rathgeb",
@@ -23,7 +23,6 @@
     "gpm": {
         "type": "theme",
         "categories": [
-            "Minimal",
             "Blog"
         ]
     },
@@ -41,7 +40,7 @@
     "devDependencies": {
         "autoprefixer": "6.3.6",
         "cssnano": "3.7.1",
-        "gulp": "3.9.1",
+        "gulp": "^4.0.0",
         "gulp-livereload": "3.8.1",
         "gulp-postcss": "6.1.1",
         "gulp-sourcemaps": "1.6.0",
@@ -50,7 +49,7 @@
         "gulp-zip": "4.0.0",
         "postcss-color-function": "2.0.1",
         "postcss-custom-properties": "5.0.1",
-        "postcss-easy-import": "1.0.1"
+        "postcss-easy-import": "^3.0.0"
     },
     "config": {
         "posts_per_page": 7

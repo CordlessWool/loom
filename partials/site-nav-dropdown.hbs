@@ -1,0 +1,36 @@
+<div id="site-nav-dropdown" class="site-nav-dropdown hide">
+    <div class="inner">
+        {{#if @labs.subscribers}}
+        {{!-- The big email subscribe modal content --}}
+            <div id="subscribe" class="subscribe">
+                <div class="subscribe-overlay-content">
+                    <h3 class="subscribe-overlay-title">Subscribe to {{@blog.title}}</h3>
+                    <p class="subscribe-overlay-description">Stay up to date! Get all the latest &amp; greatest posts delivered straight to your inbox</p>
+                    {{subscribe_form placeholder="youremail@example.com"}}
+                </div>
+            </div>
+        {{/if}}
+            <nav>
+            {{#if @blog.navigation}}
+                {{navigation}}
+            {{/if}}
+                <div class="social-links">
+                    {{#if @blog.facebook}}
+
+                            <a class="social-link social-link-fb" href="{{facebook_url @blog.facebook}}" target="_blank" rel="noopener">
+                                {{> "icons/facebook"}}
+                            </a>
+
+                    {{/if}}
+                    {{#if @blog.twitter}}
+
+                            <a class="social-link social-link-tw" href="{{twitter_url @blog.twitter}}" target="_blank" rel="noopener">
+                                {{> "icons/twitter"}}
+                            </a>
+
+                    {{/if}}
+                </div>
+            </nav>
+
+    </div>
+</div>
