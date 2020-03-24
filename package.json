@@ -38,7 +38,7 @@
     "bugs": "https://github.com/CordlessWool/Loom/issues",
     "contributors": "https://github.com/CordlessWool/Loom",
     "devDependencies": {
-        "autoprefixer": "9.6.2",
+        "autoprefixer": "9.7.5",
         "cssnano": "3.7.1",
         "gulp": "^4.0.0",
         "gulp-livereload": "3.8.1",
