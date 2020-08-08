@@ -1,7 +1,6 @@
 # Loom - a ghost theme
 
 Loom is a minimal theme for [ghost](https://ghost.org) with fulltext posts on first page.
-You will find a demo page here: [demo](https://loom.storyloom.de) and a productive site, for witch the theme was developed [here](https://storyloom.de).
 ![loom_ghost_theme_screenshot_desktop](screenshots/Screenshot-2018-6-2%20Loom_big.jpg)
 
 ## Issues
